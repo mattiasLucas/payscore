@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "38954172934",
+    "project_id": "payscore-mvp",
+    "storage_bucket": "payscore-mvp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38954172934:android:2c32e7d68f69868e0df987",
+        "android_client_info": {
+          "package_name": "com.payscore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38954172934-78pv67pvposkimk2kdevcspkhsfv7ts2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt5EnPdynzP5PHirpkbp--lr4Xwhf9rJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38954172934-78pv67pvposkimk2kdevcspkhsfv7ts2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

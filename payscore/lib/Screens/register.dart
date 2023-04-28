@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payscore/Services/authcreate.dart';
+import 'package:payscore/Widgets/mytextfield.dart';
+import 'package:payscore/Widgets/mybutton.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -23,7 +25,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registration Screen'),
+        elevation: 1.0,
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: const Text(
+          'Registration Screen',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -31,11 +39,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                TextFormField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(labelText: 'Email'),
+                const SizedBox(
+                  height: 50.0,
+                ),
+                MyTextField(
+                  labelText: 'Email',
                   validator: (value) =>
                       value!.isEmpty ? 'Enter an email' : null,
                   onChanged: (value) {
@@ -44,10 +53,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     });
                   },
                 ),
-                const SizedBox(height: 12.0),
-                TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(labelText: 'Password'),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                MyTextField(
+                  labelText: 'Password',
                   validator: (value) => value!.length < 6
                       ? 'Enter a password 6+ chars long'
                       : null,
@@ -58,10 +68,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   },
                 ),
                 const SizedBox(height: 12.0),
-                TextFormField(
-                  obscureText: true,
-                  decoration:
-                      const InputDecoration(labelText: 'Confirm Password'),
+                MyTextField(
+                  labelText: 'Confirm Password',
                   validator: (value) =>
                       value != password ? 'Passwords do not match' : null,
                   onChanged: (value) {
@@ -71,24 +79,23 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   },
                 ),
                 const SizedBox(height: 20.0),
-                ElevatedButton(
-                  child: const Text('Register'),
-                  onPressed: () async {
-                    if (_formKey.currentState!.validate()) {
-                      dynamic result = await _auth.registerWithEmailAndPassword(
-                          email, password);
-                      if (result == null) {
-                        setState(() {
-                          error = 'Error registering, please try again';
-                        });
-                      } else {
-                        // ignore: use_build_context_synchronously
-                        Navigator.pushReplacementNamed(context, '/VerifyEmail');
+                MyButton(
+                    buttonText: 'Register',
+                    onPressed: () async {
+                      if (_formKey.currentState!.validate()) {
+                        dynamic result = await _auth
+                            .registerWithEmailAndPassword(email, password);
+                        if (result == null) {
+                          setState(() {
+                            error = 'Error registering, please try again';
+                          });
+                        } else {
+                          // ignore: use_build_context_synchronously
+                          Navigator.pushReplacementNamed(
+                              context, '/VerifyEmail');
+                        }
                       }
-                    }
-                  },
-                ),
-                const SizedBox(height: 12.0),
+                    }),
                 Text(
                   error,
                   style: const TextStyle(color: Colors.red, fontSize: 14.0),

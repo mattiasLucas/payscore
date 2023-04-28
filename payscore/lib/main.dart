@@ -5,7 +5,10 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp();
+  // Get a reference to the default Firebase app
+
   runApp(const MyApp());
 }
 

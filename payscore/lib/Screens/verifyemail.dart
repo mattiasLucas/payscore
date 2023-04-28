@@ -15,7 +15,22 @@ class VerifyEmailState extends State<VerifyEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Verify Email'),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/Login');
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+        ),
+        title: const Text(
+          'Verify Email',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 1.0,
       ),
       body: Center(
         child: Column(

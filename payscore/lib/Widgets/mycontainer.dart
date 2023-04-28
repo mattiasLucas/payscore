@@ -9,7 +9,7 @@ class MyContainer extends StatelessWidget {
   const MyContainer({
     Key? key,
     required this.child,
-    this.padding = const EdgeInsets.all(16.0),
+    this.padding = const EdgeInsets.all(10.0),
     this.color = Colors.white,
     this.borderRadius = 8.0,
   }) : super(key: key);

@@ -19,6 +19,8 @@ class LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 1.0,
+        centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
           'Login',

@@ -1,9 +1,26 @@
 {
     "cSpell.words": [
+        "ARGB",
         "authcreate",
+        "chidera",
+        "efbca",
         "Fluttertoast",
+        "mybutton",
+        "mycontainer",
+        "mysmallcontainer",
+        "mytextfield",
+        "Paystack",
+        "paystackservices",
+        "paystackverify",
+        "Reslove",
+        "resolveaccount",
+        "resolveapi",
         "roboto",
+        "secretkey",
+        "Smallcontainer",
         "splashscreen",
+        "verifyaccount",
         "verifyemail"
-    ]
+    ],
+    "chatgpt.model": "gpt-4"
 }
